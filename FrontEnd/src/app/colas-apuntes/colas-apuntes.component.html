@@ -1,1 +1,137 @@
-<p>colas-apuntes works!</p>
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          Acerca de Colas
+        </h3>
+  
+        <div class="blog-post">
+          <h2 class="blog-post-title">Colas</h2>
+          <!--<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>-->
+          
+          <p>
+            Una cola es una lista de elementos en la que éstos se introducen por un extremo y se eliminan por
+            otro. Los elementos se eliminan en el mismo orden en el que insertaron. El primer elemento que
+            entra en la cola, es el primer elemento en salir. Las colas también reciben el nombre de
+            estructuras FIFO (First-In, First-Out ) Ejemplos, una cola de personas esperando usar el teléfono
+            público, comprar tortillas, una fila de autos en un auto lavado, etc.
+          </p>
+
+          <h3>Representación de una Cola</h3>
+
+          <p>
+            Las colas son una estructura con muy pocas operaciones disponibles ya que solo permiten añadir y
+            leer elementos y al igual que las pilas, se pueden representar con estructuras estáticas como los
+            arreglos y con estructuras dinámicas como las listas. En el caso de los arreglos es necesario definir
+            el tamaño máximo para la cola y dos variables auxiliares; una de ellas para que guarde la posición
+            del primer elemento de la cola (Frente) y otra para que guarde la posición del ultimo elemento
+            (Final).
+          </p>
+
+          <img class="img-fluid" src="assets/img/colas-img/cola1.png" alt="">
+
+          <h3>Operaciones para el manejo de Colas</h3>
+
+          <p>
+            Las operaciones principales en una cola son las siguientes:
+          </p>
+
+          <img class="img-fluid" src="assets/img/colas-img/cola2.png" alt="">
+
+          <h4>Colas con implementacion lineal</h4>
+
+          <p>
+            La forma más simple de implementar una cola es empleando arreglos, se emplean un par de
+            variables, frente y final, al inicio final y frente valen 0, conforme se insertan elementos final se
+            incrementa en 1 hasta llegar que la cola se llene. La operación de quitar implica verificar si la cola
+            no está vacía, el elemento se remueve y la variable frente se incrementa para ubicar el siguiente
+            elemento que se encuentra la frente de la cola.
+          </p>
+
+          <p>
+            Podemos intuir que el avance lineal de frente y final tiene el inconveniente de dejar huecos por la
+            izquierda del arreglo, de manera que es posible que final alcance su máximo limite impidiendo la
+            entrada de nuevos elementos, mientras que aún se tenga espacio disponible a la izquierda de
+            frente.
+          </p>
+
+          <p>
+            Una posible solución puede ser mantener el frente fijo y mover el resto de los elementos aunque
+            esto no es óptimo, una opción alternativa es considerar al arreglo como circular. De manera que
+            una implementación lineal no resulta eficiente y apropiado.
+          </p>
+
+          <h4>Colas con implementacion circular</h4>
+
+          <p>
+            Para hacer uso mas eficiente de la posiciones disponible se trata a las colas como una estructura
+            circular. Para ello es necesario realizar varios cambios al esquema inicial, en primer lugar los
+            valores para Frente y Final deberán iniciar ambos en la posición máxima de la cola, debido a que el
+            ultimo elemento de la cola precede inmediatamente al primero al primero dentro de la cola bajo
+            esta representación.
+          </p>
+
+          <p>
+            En segundo lugar es necesario sacrificar un elemento de la cola para no tener casos absurdos en el
+            que Final y Frente sean la misma posición aún cuando la cola este casi vacía.
+          </p>
+
+          <img class="img-fluid" src="assets/img/colas-img/cola3.png" alt="">
+
+          <p>
+            El algoritmo de inserción deberá contemplar un caso especial donde el Frente es incrementado en
+            una unidad y paso seguido se verifica que Final es igual Frente, en ese caso el valor de Final ya fue
+            incrementado y como se verifico que la cola esta llena, es necesario manipular el valor de Final
+            para que sea reubicado en su posición anterior próxima.
+          </p>
+
+          <p>
+            Los algoritmos para insertar y quitar elementos se describen a continuación:
+          </p>
+
+          <p>
+            Insertar (Enqueue)
+          </p>
+
+          <ul>
+            <li>Verificar si la cola no está llena</li>
+            <li>Insertar el elemento al final</li>
+            <li>Incrementar en 1 final</li>
+            <li>Si final igual a Limite de la cola, entonces final = 0</li>
+          </ul>
+
+          <p>
+            Eliminar (Dequeue)
+          </p>
+
+          <ul>
+            <li>Si la cola no está vacía</li>
+            <li>Leer el elemento en la posición frente</li>
+            <li>Incremento de frente en 1</li>
+            <li>Si frente igual a Limite de la cola, entonces frente = 0</li>
+          </ul>
+
+        </div><!-- /.blog-post -->
+  
+      </div><!-- /.blog-main -->
+  
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">Resumen</h4>
+          <iframe class="img-fluid"  [src]="video | ytprovider:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">Algunos Ejercicios Populares</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Lectura de niveles de un árbol</a></li>
+            <li><a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/">Recorrido en Zig Zag de un árbol</a></li>
+            <li><a href="https://leetcode.com/problems/design-snake-game/">Juego Snake</a></li>
+          </ol>
+        </div>
+        
+      </aside><!-- /.blog-sidebar -->
+  
+    </div><!-- /.row -->
+  
+  </main><!-- /.container -->

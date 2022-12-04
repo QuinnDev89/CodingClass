@@ -1,1 +1,146 @@
-<p>pilas-apuntes works!</p>
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          Acerca de Pilas
+        </h3>
+  
+        <div class="blog-post">
+          <h2 class="blog-post-title">Pilas</h2>
+          <!--<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>-->
+  
+          <h3>Definición de Pila</h3>
+
+          <p>
+            Una pila es una colección de elementos en la que sólo se pueden insertar y eliminar elementos por
+            un solo extremo llamado tope. Al igual que toda estructura de datos, se consideran algunas
+            operaciones básicas como la inserción y el borrado, que se denominan comúnmente como
+            operación "push" y "pop" respectivamente.
+          </p>
+
+          <p>
+            Los elementos de una pila se eliminan en orden inverso al que fueron insertados. Es decir, el
+            último elemento que entra a la pila es el primer elemento que se saca. Esta estructura se le
+            conoce como estructura LIFO (Last-In, First-Out / último en entrar - primero en salir).
+          </p>
+
+          <p>
+            Existen numerosos casos prácticos en los que se utiliza el concepto pila: pila de platos (cuando se
+            necesita un plato limpio siempre se toma el primero de la pila), pila de monedas, pila de latas, etc.
+          </p>
+
+          <p>
+            Las pilas se pueden representar como arreglos y como listas. En el caso de los arreglos es
+            necesario definir el tamaño máximo, y una variable auxiliar que indique el tope de la pila, en el caso
+            de las listas se manejan espacios dinámicos denominados nodos.
+          </p>
+
+          <h3>Representación de una Pila</h3>
+
+          <p>
+            Las pilas se pueden representar en un lenguaje de programación por medio de listas enlazadas o
+            con arreglos, para los cuales se debe definir el tamaño máximo de la pila y una variable auxiliar
+            que debe servir como apuntador al último elemento de la pila llamado Tope.
+          </p>
+
+          <img class="img-fluid" src="assets/img/pilas-img/pila1.png" alt="">
+
+          <h4>Representación en Memoria</h4>
+
+          <p>
+            Las pilas no son estructuras de datos fundamentales, es decir, no están definidas como tales en
+            los lenguajes de programación, ya que tienen que ser implementadas. Las pilas pueden
+            representarse e implementarse mediante el uso de:
+          </p>
+
+          <ul>
+            <li>Arreglos (pilas estáticas)</li>
+            <li>Listas enlazadas (pilas dinámicas)</li>
+          </ul>
+
+          <p>
+            A las Pilas que se implementan con arreglos se les denominan Pilas Estáticas, debido a que su
+            tamaño difícilmente será modificado, a no ser que así se implemente. Por lo tanto es importante
+            definir el tamaño máximo de la pila antes de su uso, además es necesario considerar un apuntador
+            al último elemento insertado en la pila (tope) el cual denominaremos Sp (Stak pointer). La
+            representación gráfica de una pila es la siguiente:
+          </p>
+
+          <img class="img-fluid" src="assets/img/pilas-img/pila2.png" alt="">
+
+          <p>
+            Como utilizamos arreglos para implementar pilas, tenemos la limitante de espacio de memoria
+            reservada. Una vez establecido un máximo de capacidad para la pila, ya no es posible insertar más
+            elementos, aunque es posible emplear un mecanismo de inicialización dinámico de memoria de
+            manera que se cuente con una sola pila de tamaño ajustable e inclusive es posible incorporar en
+            una clase un método para el reajuste de tamaño.
+          </p>
+
+          <h3>Operaciones para manejar una Pila</h3>
+
+          <p>
+            Las operaciones principales son las siguientes:
+          </p>
+
+          <img class="img-fluid" src="assets/img/pilas-img/pila3.png" alt="">
+
+          <p>
+            Como una pila puede ser implementada con arreglos, se emplea una variable que nos indique el
+            número máximo de elementos y una variable que nos indique en qué posición se encuentra el
+            último elemento insertado en la pila, de manera que una variable tope inicialmente puede tener
+            valor -1 indicando que la pila está vacía, al insertar un elemento la variable incrementa a 1 y el tope
+            estaría en 0, lo que indica en qué posición se encuentra el valor recién insertado. Los algoritmos
+            para insertar y quitar elementos se describen a continuación:
+          </p>
+
+          <p>
+            Insertar (push)
+          </p>
+
+          <ul>
+            <li>Verificar si la pila no está llena</li>
+            <li>Incrementar en 1 el pivote que indica el índice en la pila</li>
+            <li>Almacenar el elemento en la posición o índice del pivote</li>
+          </ul>
+
+          <p>
+            Quitar (pop)
+          </p>
+
+          <ul>
+            <li>Si la pila no está vacía</li>
+            <li>Leer el elemento en la posición que indica el pivote de la pila</li>
+            <li>Decremento en 1 el pivote de la pila que indica el índice</li>
+          </ul>
+
+          <img class="img-fluid" src="assets/img/pilas-img/pila4.png" alt="">
+
+      
+        </div><!-- /.blog-post -->
+  
+      </div><!-- /.blog-main -->
+  
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">Resumen</h4>
+          <iframe class="img-fluid"  [src]="video | ytprovider:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">Algunos Ejercicios Populares</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="https://leetcode.com/problems/min-stack/">Pila mínima</a></li>
+            <li><a href="https://leetcode.com/problems/valid-parentheses/">Paréntesis válidos</a></li>
+            <li><a href="https://leetcode.com/problems/basic-calculator-ii/">Calculadora básica</a></li>
+            <li><a href="https://leetcode.com/problems/binary-tree-inorder-traversal/">Lectura de árbol in-orden</a></li>
+            <li><a href="https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/">Paréntesis mínimos a remover</a></li>
+            <li><a href="https://leetcode.com/problems/remove-k-digits/">Remover K dígitos</a></li>
+            <li><a href="https://leetcode.com/problems/simplify-path/">Simplificar dirección UNIX</a></li>
+          </ol>
+        </div>
+  
+      </aside><!-- /.blog-sidebar -->
+  
+    </div><!-- /.row -->
+  
+  </main><!-- /.container -->

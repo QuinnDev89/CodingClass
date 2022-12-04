@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grafos-apuntes.component.css']
 })
 export class GrafosApuntesComponent implements OnInit {
-
+  video='BhvLIzVL8_o';
   constructor() { }
 
   ngOnInit(): void {
