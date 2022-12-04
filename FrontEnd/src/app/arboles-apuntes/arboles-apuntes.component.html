@@ -1,0 +1,219 @@
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          Acerca de Árboles
+        </h3>
+  
+        <div class="blog-post">
+          <h2 class="blog-post-title">Árboles</h2>
+          <!--<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>-->
+          <p>Los árboles son estructuras de datos no lineales, a diferencia de las listas. En este caso se cuenta 
+            con un nodo (vértice) principal conocido como nodo raíz que es el responsable de conservar las 
+            referencias de las conexiones (ramas) con uno más nodos con los cuales tiene relación. Esta 
+            característica tan importante permite realizar diseños interesantes de estructuras de datos que 
+            pueden ser manipuladas bajo un criterio jerárquico.
+          </p>
+
+          <p>
+            El árbol es una estructura muy importante ya que puede ser empleado tanto en ordenamientos y 
+            búsquedas, como en la construcción de compiladores, así como en la representación de 
+            expresiones, algoritmos de cifrado, inteligencia artificial, correctores ortográficos, editores de texto, 
+            entre muchas más aplicaciones.
+          </p>
+          
+          <h3>Árboles Generales</h3>
+
+          <p>Los datos son elementos de información que se encuentran relacionados entre si a través de nodos
+            y ramas, un árbol genealógico, un esquema de directorios o un esquema de mandos en una empresa
+            es una forma muy simple de árbol general. La esencia más importante de un árbol es su carácter
+            jerárquico y es lo que generalmente resulta útil.
+          </p>
+
+          <img class="img-fluid" src="assets/img/arboles-img/arb1.png" alt="">
+
+          <p>
+            Formalmente se define un árbol de tipo T como una estructura homogénea que es la concatenación
+            de un elemento de tipo T con un número finito de árboles disjuntos, llamados subárboles. Una forma
+            particular de árbol puede ser la estructura vacía.
+          </p>
+
+          <p>
+            Los árboles con los que trabajaremos tienen otra característica importante: cada nodo sólo puede
+            ser apuntado por otro nodo, es decir, cada nodo sólo tendrá un padre. Esto hace que estos árboles
+            estén fuertemente jerarquizados, y es lo que en realidad les da la apariencia de árboles.
+          </p>
+
+          <p>
+            En relación con otros nodos:
+          </p>
+          <ul>
+            <li>Nodo hijo: cualquiera de los nodos apuntados por uno de los nodos del árbol.</li>
+            <li>Nodo padre: nodo que contiene un puntero al nodo actual.</li>
+          </ul>
+
+          <p>
+            En cuanto a la posición dentro del árbol:
+          </p>
+          <ul>
+            <li>Nodo raíz: nodo que no tiene padre, este es el nodo que usaremos para referirnos al árbol.</li>
+            <li>Nodo hoja o terminales: nodo que no tiene hijos.</li>
+            <li>Nodo rama o interiores: estos son los nodos que no pertenecen a ninguna de las dos
+              categorías anteriores.
+            </li>
+          </ul>
+
+          <p>
+            Existen otros conceptos que definen las características del árbol, en relación con su tamaño:
+          </p>
+          <ul>
+            <li>Grado: el número de hijos que tiene el nodo con más hijos dentro del árbol.</li>
+            <li>Nivel: se define para cada elemento del árbol como la distancia a la raíz, medida en nodos,
+              de manera que el nivel de la raíz por definición es 0.
+            </li>
+            <li>Altura o profundidad: es el nivel de la hoja del camino más largo después de la raíz mas
+              uno. Por definición la altura de árbol vacío es 0.
+            </li>
+          </ul>
+
+          <pre><code>Example code block</code></pre>
+          
+          <h3>Árboles Binarios</h3>
+
+          <p>Un árbol binario es una estructura de datos en el cual cada nodo tiene como máximo dos nodos
+            hijos. Típicamente los nodos hijos son llamados nodo izquierdo y nodo derecho. Un árbol binario es
+            una estructura típicamente recursiva, ya que cada nodo es la raíz de su propio subárbol izquierdo y
+            derecho.
+          </p>
+
+          <h4>Estructura de un Árbol Binario</h4>
+
+          <p>
+            Un árbol binario involucra al menos un campo información que corresponde al tipo de dato que
+            pretendemos emplear y un par de punteros que hacen referencia a la parte izquierda y derecha del
+            árbol binario. Recuerde que existen ocasiones en que no todos los nodos del árbol serán empleados
+            de manera que siempre se inicializaran en null.
+          </p>
+
+          <pre><code>
+          struct nodo {{ '{' }}
+            char dato;
+            struct nodo *izq;
+            struct nodo *der;
+          {{ '}' }}
+          </code></pre>
+
+          <h4>Árbol equilibrado y completo</h4>
+
+          <p>En cualquier nivel n, un árbol binario puede tener de 1 a 2n nodos dentro del árbol, de manera que
+            el número de nodos por nivel contribuye a la densidad del árbol.
+          </p>
+
+          <p>
+            La distancia de un nodo a la raíz generalmente determina la eficiencia del árbol con la que puede
+            ser localizado un nodo. Para determinar si un árbol está equilibrado, se calcula su factor de
+            equilibrio, que es la diferencia de la altura que existe entre los subárboles derecho e izquierdo.
+            De esta manera se dice que un árbol está equilibrado si la altura de sus subárboles difiere en no más
+            de uno (-1, 0, +1).
+          </p>
+
+          <img class="img-fluid" src="assets/img/arboles-img/arb2.png" alt="">
+
+          <p>Un árbol binario completo es un árbol binario de profundidad K que tiene todos los nodos posibles
+            hasta el penúltimo nivel, y donde los elementos del último nivel están colocados de izquierda a
+            derecha sin dejar huecos entre ellos.
+          </p>
+
+          <img class="img-fluid" src="assets/img/arboles-img/arb3.png" alt="">
+
+          <h3>Recorrido dentro de un árbol</h3>
+
+          <p>Todo árbol binario se puede recorrer de 3 formas diferentes ya que no existe
+            estrictamente un primer elemento dentro del mismo. En un recorrido del árbol cada nodo del árbol
+            es procesado (visitado) una sola vez en una secuencia predeterminada. En general se puede decir
+            que existen dos formas generales para la secuencia de recorrido, profundidad y altura.
+          </p>
+
+          <p>
+            Un recorrido en amplitud requiere un proceso horizontal desde la raíz a todos sus hijos, a
+            continuación, a los hijos de sus hijos y así sucesivamente hasta que todos los nodos han sido
+            procesados, de manera que el proceso se realiza nivel por nivel.
+          </p>
+
+          <p>En un recorrido en profundidad, el proceso exige un camino desde la raíz a través de un hijo al
+            descendiente más lejano del primer hijo antes de proseguir a un segundo hijo. En otras palabras,
+            todos los descendientes de un hijo se procesan antes del siguiente hijo. Dentro del recorrido en
+            profundidad existen 3 tipos de secuencias de recorrido:
+          </p>
+
+          <ul>
+            <li>Pre-orden</li>
+            <li>In-orden</li>
+            <li>Post-orden</li>
+          </ul>
+
+          <h4>Recorrido en Pre-orden</h4>
+
+          <pre><code>
+            Visitar el nodo raíz (N)
+            Recorrido en pre-orden (subárbol izquierdo)
+            Recorrido en pre-orden (subárbol derecho)
+          </code></pre>
+
+          <img class="img-fluid" src="assets/img/arboles-img/arb4.png" alt="">
+
+          <pre>Genera la cadena: <code>- * A + B C D</code></pre>
+
+          <h4>Recorrido en In-orden</h4>
+
+          <pre><code>
+            Recorrido en pre-orden (subárbol izquierdo)
+            Visitar el nodo raíz (N)
+            Recorrido en pre-orden (subárbol derecho)
+          </code></pre>
+
+          <img class="img-fluid" src="assets/img/arboles-img/arb5.png" alt="">
+
+          <pre>Genera la cadena: <code>A * B + C - D</code></pre>
+
+          <h4>Recorrido en Post-orden</h4>
+
+          <pre><code>
+            Recorrido en pre-orden (subárbol izquierdo)
+            Recorrido en pre-orden (subárbol derecho)
+            Visitar el nodo raíz (N)
+          </code></pre>
+
+          <img class="img-fluid" src="assets/img/arboles-img/arb6.png" alt="">
+
+          <pre>Genera la cadena: <code>A B C + * D -</code></pre>
+
+        </div><!-- /.blog-post -->
+  
+      </div><!-- /.blog-main -->
+  
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">Resumen</h4>
+          <iframe class="img-fluid"  [src]="video | ytprovider:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">Algunos Ejercicios Populares</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="https://leetcode.com/problems/diameter-of-binary-tree/">Diámetro de un árbol binario</a></li>
+            <li><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">Menor ancestro común de un árbol de búsqueda binaria</a></li>
+            <li><a href="https://leetcode.com/problems/minimum-depth-of-binary-tree/">Menor profundidad de un árbol binario</a></li>
+            <li><a href="https://leetcode.com/problems/closest-binary-search-tree-value/">Valor más cercano de un árbol binario</a></li>
+            <li><a href="https://leetcode.com/problems/inorder-successor-in-bst/">Sucesor in-orden de un árbol de búsqueda binaria</a></li>
+            <li><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">Menor ancestro común de un árbol binario</a></li>
+            <li><a href="https://leetcode.com/problems/validate-binary-search-tree/">Validar árbol de búsqueda binaria</a></li>
+            <li><a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">Máxima suma de un camino en un árbol binario</a></li>
+          </ol>
+        </div>
+      </aside><!-- /.blog-sidebar -->
+  
+    </div><!-- /.row -->
+  
+  </main><!-- /.container -->
+  
