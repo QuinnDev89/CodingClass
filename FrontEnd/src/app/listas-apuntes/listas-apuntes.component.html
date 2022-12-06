@@ -1,1 +1,227 @@
-<p>listas-apuntes works!</p>
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          Acerca de Listas
+        </h3>
+  
+        <div class="blog-post">
+          <h2 class="blog-post-title">Listas Enlazadas</h2>
+          <!--<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>-->
+  
+          <p>
+            La lista enlazada es una de las estructuras de datos más versátiles, consiste en una secuencia de
+            elementos homogéneos llamados Nodos, cada uno de ellos contiene arbitrariamente al menos un
+            campo dato, en el cual podemos almacenar algún tipo de información y una o dos referencias
+            llamadas enlaces, que almacenan la posición al nodo siguiente o previo. De manera que una lista
+            enlazada es un tipo de dato abstracto con elementos (nodos) auto-referenciados debido a que cada
+            nodo contiene un puntero o enlace a otro dato del mismo tipo, esta característica permite crecer y
+            reducir de manera dinámica su número de nodos.
+          </p>
+
+          <img class="img-fluid" src="assets/img/listas-img/list1.png" alt="">
+
+          <p>
+            La lista enlazada se accede a partir de un puntero externo llamado nodo raíz que apunta al primer
+            nodo de la lista, cada campo del nodo está compuesto (en su instancia más simple) de un campo
+            información (info) y un campo siguiente (sig) que contiene la dirección del nodo consecutivo. El
+            campo siguiente del último nodo de la lista generalmente contiene un valor especial llamado nulo
+            (null) que indica el fin de la lista.
+          </p>
+
+          <p>
+            Una lista con un solo elemento no resulta una estructura de datos interesante, además de estar muy
+            acotada, por ello nos abocaremos a la construcción de estructuras de datos más complejas,
+            elaboradas y funcionales. Antes que nada, es necesario identificar primeramente las diversas clases
+            de listas enlazadas que existen; y analizaremos los diversos algoritmos existentes para realizar
+            operaciones que pueden realizarse con ellas, tales como la inserción de elementos, el borrado de
+            estos, la búsqueda de datos, entre otras operaciones indispensables para su manipulación
+            apropiada.
+          </p>
+
+          <h3>Listas simples enlazadas</h3>
+
+          <p>
+            Las listas permiten operaciones como la inserción y remoción de nodos en cualquier punto de esta
+            en un tiempo constante de ejecución, es importante recordar que la listas son elementos
+            inherentemente dinámicos y tiene que ser manipulados en tiempo de ejecución.
+          </p>
+
+          <p>
+            Las listas simples ligadas son el tipo de lista más sencillo de implementar y quizás una de los más
+            útiles al momento de elaborar alguna herramienta de programación, debido a que su esquema puede
+            ser fácilmente adaptado para generar pilas y colas dinámicas.
+          </p>
+
+          <p>
+            Las listas simples son colecciones de datos enlazados por un campo de auto-referencia (al siguiente
+            nodo de la lista), donde el último elemento apunta a una dirección (null) que representa el fin de la
+            colección como se mostró en el dibujo del inicio de la sección.
+          </p>
+
+          <p>
+            Como veremos las operaciones más comunes en una lista enlazada son: insertar, eliminar y
+            recorrer, pero como notaremos dichas operaciones suelen diversificarse dependiendo del tipo de
+            estructura que pretendemos emular generando versiones más elaboradas de las mismas para cada
+            tipo de estructura de datos dinámica, a continuación, se mostraran los algoritmos correspondientes
+            a algunas de esas variantes para una lista simple enlazada.
+          </p>
+
+          <p>
+            Como podrá darse cuenta algunos de estos algoritmos pueden ser útiles al momento de diseñar pilas
+            y colas dinámicas, o algún otro tipo de programa que implemente dichos mecanismos.
+          </p>
+
+          <h4>Algoritmo para insertar un nodo al inicio de la lista</h4>
+
+          <p>
+            Este algoritmo inserta elementos justo
+            después del nodo raíz, por lo que el último nodo insertado justo después de raíz será considerado
+            como el primer nodo. Como podemos intuir siempre el primer nodo que se inserte apuntará al valor
+            de null, por lo que estará confinado a permanecer al final de la lista.
+          </p>
+
+          <pre><code>
+            raiz = null
+            repetir
+                crea(nuevo)
+                nuevo->info = valor (a)
+                nuevo->sig = raiz (b)
+                raiz = nuevo (c)
+            hasta que no se inserten más nodos
+          </code></pre>
+
+          <p>
+            El algoritmo crea un nuevo nodo y posteriormente se almacena el valor correspondiente dentro de
+            la parte información del nuevo nodo (a). Después será necesario insertar el nuevo nodo en la lista,
+            para ello se le asigna la dirección contenida en raíz (primer nodo) al nuevo nodo en su parte siguiente
+            (b). Finalmente será necesario como último paso asignar la dirección del nuevo nodo al nodo raíz de
+            manera que raíz se preserva como el puntero de inicio y el nuevo nodo para ser el primero en la lista
+            (c). El proceso concluye con una lista enlazada (d). Podemos observar que 2 fue el primero en ser
+            insertado y después 8, 5 y finalmente 6.
+          </p>
+
+          <img class="img-fluid" src="assets/img/listas-img/list2.png" alt="">
+          <img class="img-fluid" src="assets/img/listas-img/list3.png" alt="">
+
+          <h4>Algoritmo para eliminar al inicio de la lista</h4>
+
+          <p>
+            Este algoritmo se encarga de eliminar justo el primer
+            nodo al que apunta la raíz por lo que el puntero raíz tendrá que ser reasignado al nodo primero en
+            su parte siguiente, de manera que el nodo raíz apuntara al siguiente elemento en la lista. En caso
+            de eliminar el último nodo de la lista, raíz apuntara a null.
+          </p>
+
+          <pre><code>
+            si (raíz != null ) (a)
+                tempo = raiz (b)
+                raiz = raiz->sig (c)
+                elimina(tempo) (d)
+          </code></pre>
+
+          <p>
+            La siguiente secuencia de figuras muestran los pasos realizados a lo largo del proceso de eliminación
+            del primer nodo de la lista. Lo primero es verificar si existen nodos en la lista (a), una vez verificado
+            esto se asigna la dirección del primer nodo a un nodo temporal (tempo), de esta manera obtenemos
+            la dirección del nodo que mas tarde eliminaremos. Después raíz es asignada al siguiente nodo de la
+            lista (c) y finalmente se elimina el nodo temporal (d).
+          </p>
+
+          <img class="img-fluid" src="assets/img/listas-img/list4.png" alt="">
+          <img class="img-fluid" src="assets/img/listas-img/list5.png" alt="">
+
+          <h4>Algoritmo para recorrer una lista</h4>
+
+          <p>
+            Este algoritmo nos permite recorrer todos los elementos de la
+            lista a partir del inicio, para ello asignamos la dirección del nodo de inicio (raíz) a un nodo temporal,
+            mientras la lista no este vacía vamos mostrando la información del nodo, será necesario asignar la
+            dirección del siguiente nodo a temporal, de manera que el recorrido se vaya realizando.
+          </p>
+
+          <pre><code>
+            tempo = raiz
+            mientras (tempo != null)
+                imprimir(tempo->info)
+                tempo = tempo->sig
+          </code></pre>
+
+          <p>
+            Con los algoritmos ya vistos es posible construir un programa que realice las operaciones básicas
+            de una pila dinámica, considerando al nodo raíz como el tope de la pila dinámica.
+          </p>
+
+          <img class="img-fluid" src="assets/img/listas-img/list6.png" alt="">
+
+          <h4>Algoritmo para insertar un nodo al final de la lista</h4>
+
+          <p>
+            En este algoritmo se insertará un nuevo nodo
+            al final de la lista. Para ello será necesario conservar dos punteros uno al inicio y otro al último de
+            la lista, de manera que no sea necesario recorrer toda la lista cada vez que se requiera insertar un
+            elemento. El ultimo puntero nos indica la posición en la que se insertará el nuevo nodo, y una vez
+            hecho esto la dirección al último nodo deberá ser actualizada.
+          </p>
+
+          <pre><code>
+            inicio = ultimo = null
+            repetir
+                crea( nuevo )
+                nuevo->info = valor
+                nuevo->sig = null
+                si ( ultimo == null )
+                    inicio = nuevo
+                sino
+                    ultimo->sig = nuevo
+                ultimo = nuevo
+            hasta que no se inserten mas nodos
+          </code></pre>
+
+          <img class="img-fluid" src="assets/img/listas-img/list7.png" alt="">
+
+          <p>
+            Como ya hemos observado ahora, ya con el algoritmo de inserción al final de la lista estamos en
+            posibilidades de implementar un esquema de cola dinámica.
+          </p>
+
+          <img class="img-fluid" src="assets/img/listas-img/list8.png" alt="">
+
+          <p>
+            En esencia casi se conservan todas las operaciones del programa anterior. La función de inserción
+            (push_back) se modifica, y además será necesario manipular dos punteros, uno al inicio y otro al
+            último nodo de la cola dinámica (atrás), de manera que último siempre conserve la referencia al final
+            de la cola.
+          </p>
+
+
+        </div><!-- /.blog-post -->
+  
+      </div><!-- /.blog-main -->
+  
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">Resumen</h4>
+          <iframe class="img-fluid"  [src]="video | ytprovider:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">Algunos Ejercicios Populares</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="https://leetcode.com/problems/delete-node-in-a-linked-list/">Eliminar nodo en lista enlazada</a></li>
+            <li><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">Intersección entre dos listas</a></li>
+            <li><a href="https://leetcode.com/problems/linked-list-cycle/">Encontrar ciclo en una lista enlazada</a></li>
+            <li><a href="https://leetcode.com/problems/merge-two-sorted-lists/">Unir dos listas enlazadas ordenadas</a></li>
+            <li><a href="https://leetcode.com/problems/reverse-linked-list/">Invertir lista enlazada</a></li>
+            <li><a href="https://leetcode.com/problems/add-two-numbers/">Sumar dos números</a></li>
+            <li><a href="https://leetcode.com/problems/lru-cache/">Caché LRU</a></li>
+            <li><a href="https://leetcode.com/problems/merge-k-sorted-lists/">Juntar K listas enlazadas ordenadas</a></li>
+            <li><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/">Invertir nodos en K grupos</a></li>
+          </ol>
+        </div>
+  
+      </aside><!-- /.blog-sidebar -->
+  
+    </div><!-- /.row -->
+  
+  </main><!-- /.container -->
