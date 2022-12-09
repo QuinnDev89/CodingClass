@@ -1,0 +1,297 @@
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          Acerca de Grafos
+        </h3>
+  
+        <div class="blog-post">
+          <h2 class="blog-post-title">Grafos</h2>
+          <!--<p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>-->
+  
+          <p>Un grafo es una estructura de datos que se compone de un conjunto de vértices o nodos y un
+            conjunto de arcos o relaciones entre pares de vértices. Los arcos representan la trayectoria o
+            conexión existente entre dos vértices. Tanto el conjunto de vértices como el conjunto de arcos debe
+            ser de número finito e inclusive el conjunto de aristas puede estar vacío.
+          </p>
+          
+          <h3>Tipos de Grafos</h3>
+
+          <p>El siguiente conjunto de vértices, V, y el conjunto de arcos F, define un grafo que tiene cinco vértices
+            con etiquetas de A ha E y cinco arcos.
+          </p>
+
+          <pre><code>
+            V = {{ '{' }} A, B, C, D, E {{ '}' }}
+            F = {{ '{' }}{{ '{' }}A,B{{ '}' }},{{ '{' }}A,E{{ '}' }},{{ '{' }}B,E{{ '}' }},{{ '{' }}C,D{{ '}' }},{{ '{' }}C,E{{ '}' }}{{ '}' }}
+          </code></pre>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf1.png" alt="">
+
+          <p>Cada arco es un conjunto de dos vértices. Existe un arco o una relación entre los vértices A y B, A y
+            E, B y E, C y D, y una más entre C y E. Si existe un arco entre cada par de vértices x, y, significa que
+            existe una trayectoria que parte del vértice x al vértice y, y viceversa.
+          </p>
+
+          <h4>Grafos Dirigidos y no Dirigidos</h4>
+
+          <p>Los arcos de un grafo son dirigidos si la existencia de un arco que va dese D hasta C no garantiza
+            necesariamente que exista una trayectoria en ambas direcciones.
+          </p>
+
+          <p>
+            Un grafo que contiene arcos dirigidos se conoce como dígrafo, y uno que contiene los arcos no
+            dirigidos se conoce simplemente como grafo. Un arco dirigido es como una calle de un solo sentido
+            que solo podrá ser transitada en una sola dirección. Los arcos dirigidos son representados por líneas
+            con una flecha que apuntan a un solo lado, mientras que los arcos no dirigidos son representados
+            con líneas sencillas.
+          </p>
+
+          <p>
+            El conjunto de arcos de un dígrafo es de la siguiente manera:
+          </p>
+
+          <pre><code>
+            V = {{ '{' }} A, B, C, D, E {{ '}' }}
+            F = {{ '{' }}(B,A), (A,E), (E,B), (E,C), (C,D), (D,C){{ '}' }}
+          </code></pre>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf2.png" alt="">
+
+          <p>
+            Observe la diferencia en esta notación. Cada arco en la lista de los arcos de los grafos dirigidos es
+            un par ordenado de vértices, en lugar de ser un conjunto tal y como se representa en un grafo no
+            dirigido. El arco (C, D) es un arco que parte desde C hasta llegar a D. Existe tanto un arco (C,D),
+            como (D,C) es decir en ambas direcciones.
+          </p>
+
+          <p>
+            En nuestras convenciones diremos que un par ordenado (u,v) es un arco con dirección de origen u
+            a destino v, mientras de un arco en un grafo no dirigido es el conjunto {{ '{' }}u,v{{ '}' }}, que significa que el arco
+            va en ambas direcciones. Es posible construir un grafo dirigido que es equivalente a un grafo no
+            dirigido sustituyendo cada arco {{ '{' }}u,v{{ '}' }} por sus pares ordenados (u,v) y (v,u). En el resto de los
+            algoritmos se empleará la notación de par ordenado para referirse a un arco.
+          </p>
+
+          <p>
+            Los grafos no son más que la versión general de un árbol, es decir, cualquier nodo de un grafo puede
+            apuntar a cualquier otro nodo de éste (incluso a él mismo).
+          </p>
+
+          <p>
+            Este tipo de estructuras de datos tienen una característica que lo diferencia de las estructuras que
+            hemos visto hasta ahora: los grafos se usan para almacenar datos que están relacionados de alguna
+            manera (relaciones de parentesco, puestos de trabajo, etc); por esta razón se puede decir que los
+            grafos representan la estructura real de un problema.
+          </p>
+
+          <p>
+            En lo que a ingeniería de telecomunicaciones se refiere, los grafos son una importante herramienta
+            de trabajo, pues se utilizan tanto para diseño de circuitos como para calcular la mejor ruta de
+            comunicación en una ciudad o en Internet.
+          </p>
+
+          <h3>Representación de Grafos</h3>
+
+          <h4>Matriz de Adyacencia</h4>
+
+          <p>
+            Usamos una matriz cuadrada de booleanos en la que las filas representan los nodos origen, y las
+            columnas, los nodos destinos. De esta forma, cada intersección entre fila y columna contiene un
+            valor booleano que indica si hay o no conexión (1 y 0 respectivamente) entre los nodos a los que se
+            refiere. Si se trata de un grafo con pesos, en lugar de usar valores booleanos, usaremos los propios
+            pesos de cada enlace y en caso de que no exista conexión entre dos nodos, rellenaremos esa casilla
+            con un valor que represente un coste ∞, es decir, con el valor nulo.
+          </p>
+
+          <p>
+            Dado que, en el grafo dirigido dado, ningún nodo está conectado a sí mismo, todas las celdas que
+            se encuentran en la diagonal de la matriz se marcan como cero.
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf3.png" alt="">
+
+          <p>
+            Si el grafo es no dirigido la matriz resultante es simétrica respecto a la diagonal principal. Aquí, A
+            está conectado a B, pero B también está conectado a A. Por lo tanto, ambas celdas están marcadas
+            como una.
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf4.png" alt="">
+
+          <p>
+            En el caso de un grafo ponderado, las celdas están marcadas con pesos en las aristas en lugar de
+            unos. En la Figura, el peso asignado a la arista que conecta los nodos B y D es 3. Por lo tanto, las
+            celdas correspondientes en la matriz de adyacencia, es decir, la fila B, la columna D y la fila D, la
+            columna B, están marcadas con 3.
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf5.png" alt="">
+
+          <h4>Listas de Adyacencua</h4>
+
+          <p>
+            En la representación de lista de adyacencia de un grafo, cada vértice se representa como un nodo.
+            El nodo puede contener datos y una referencia a una lista enlazada. Esta lista enlazada proporciona
+            una lista de todos los nodos adyacentes al nodo actual. Considere un grafo que contiene un arco
+            que conecta el nodo A y el nodo B. Luego, el nodo A estará disponible en la lista enlazada del nodo
+            B (digrafo de 5 nodos y su correspondiente lista de adyacencia).
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf6.png" alt="">
+
+          <p>
+            De manera similar, también se pueden construir listas de adyacencia para un gráfico no dirigido. La
+            siguiente figura proporciona un ejemplo de un gráfico no dirigido junto con su lista de adyacencia
+            para una mejor comprensión.
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf7.png" alt="">
+
+          <p>
+            La lista de adyacencia permite un proceso de búsqueda más rápido en comparación con la matriz
+            de adyacencia. Sin embargo, no es la mejor representación de grafos, especialmente cuando se
+            trata de agregar o eliminar nodos. Por ejemplo, eliminar un nodo implicaría examinar todas las listas
+            de adyacencia para eliminar un nodo en particular de todas las listas.
+          </p>
+
+          <p>
+            El conjunto de adyacencia mitiga algunos de los desafíos que plantea la lista de adyacencia. El
+            conjunto de adyacencia es bastante similar a la lista de adyacencia excepto por la diferencia que en
+            lugar de una lista enlazada; se proporciona un conjunto de vértices adyacentes. La lista y el conjunto
+            de adyacencia se utilizan a menudo para grafos dispersos con pocas conexiones entre nodos. Por
+            el contrario, la matriz de adyacencia funciona bien para grafos bien conectados que comprenden
+            muchos nodos.
+          </p>
+
+          <h3>Recorrido en Grafos</h3>
+
+          <p>
+            La mayoría de los algoritmos de grafos incluyen la visita a cada uno de los vértices en un orden
+            sistemático. De la misma forma que en los arboles existen diferentes formas de llevar a cabo este
+            proceso, los algoritmos más comunes para el recorrido (travesía) en un grafo son, la búsqueda de
+            primero en amplitud y la de primero en profundidad.
+          </p>
+
+          <h4>Búsqueda primero en amplitud</h4>
+
+          <p>
+            (Breadth First Serarch) se visita primero el nodo inicial y
+            después todos los nodos adyacentes a éste, posteriormente todos los nodos que puedan
+            alcanzarse por una trayectoria que comienza con el nodo de inicio que contenga dos arcos, tres
+            arcos y así sucesivamente. Un requerimiento para la búsqueda primero en amplitud es que
+            debemos visitar todos los nodos. En una búsqueda en amplitud, es necesario seleccionar el nodo
+            de inicio y a partir de él se visitarán todos los nodos adyacentes (cercanos a la cima) de manera
+            que los nodos más alejados serán visitados al final.
+          </p>
+
+          <p>
+            En un grafo de este tipo no existe un nodo inicial especial, como en el caso de los árboles, de
+            manera que se seleccionara un nodo inicial de manera arbitraria que tenga una etiqueta de 0, y
+            posteriormente todos aquellos adyacentes a él, y así sucesivamente hasta que se hayan visitado
+            todos los vértices, para realizar este proceso nos auxiliaremos de una cola para ir determinando
+            los nodos adyacentes que serán visitados.
+          </p>
+
+          <p>
+            Consideraremos el siguiente grafo como ejemplo y comenzaremos el proceso a partir del vértice 0,
+            una vez visitado el nodo 0 vemos que 1 y 3 son adyacentes a él (a). Visitamos el vértice 1 y
+            encontramos como adyacentes a 0, 2, 4, 6 y 7. El 0 ya fue visitado saltamos de 1 a 3. En 3 vemos al
+            vértice adyacente 0 que ya fue visitado, y al vértice 2 que ya fue seleccionado, ahora hemos visitado
+            0, 1 y 3.
+          </p>
+
+          <p>
+            Ahora visitamos el vértice 2 y vemos que 8 y 9 son adyacentes y son agregados a la cola (4, 6, 7, 8
+            y 9). Visitamos 4 que tiene adyacente a 5 que es agregado a la lista (6, 7, 8, 9 y 5). Finalmente
+            visitamos 6 y 7, y posteriormente 8, 9 y 5. Los vértices han sido visitados en la secuencia 0, 1, 3, 2,
+            4, 6, 7, 8, 9 y 5.
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf8.png" alt="">
+
+          <p>
+            Se plantea el algoritmo siguiendo un esquema iterativo:
+          </p>
+
+          <pre><code>
+            dado G = (V,E) y teniendo en cuenta que el vértice origen es u.
+            Tomar un vértice u
+            Marcar u como visitado
+            Insertar u en la cola
+            Mientras la cola no esta vacía
+                Sacar u de la cola
+                Para todo vértice v adyacentes a u
+                    Si v no ha sido visitado
+                        Marcar v como visitado
+                        Insertar v en la cola
+                        Insertar a u como padre de v
+                Fin Para
+            Fin Mientras
+          </code></pre>
+
+          <h4>Búsqueda Primero en Profundidad</h4>
+
+          <p>
+            (Depth First Search) la estrategia consiste en partir de un vértice
+            determinado v y a partir de allí, cuando se visita un nuevo vértice, explorar cada camino que
+            salga de él. Hasta que no se haya terminado de explorar uno de los caminos no se comienza
+            con el siguiente. Un camino deja de explorarse cuando se llega a un vértice ya visitado.
+          </p>
+
+          <p>
+            Si existían vértices no alcanzables desde v el recorrido queda incompleto; entonces, se debe
+            seleccionar algún vértice como nuevo vértice de partida, y repetir el proceso.
+          </p>
+
+          <p>
+            Se plantea el algoritmo siguiendo un esquema recursivo:
+          </p>
+
+          <pre><code>
+            dado G = (V,E)
+            Tomar un vértice u
+            Marcar u como visitado
+            Para todo vértice v adyacentes a u
+                Si v no ha sido visitado
+                    Insertar a u como padre de v
+                    Recursivamente llamar con v
+                Fin Para
+            Fin Mientras
+          </code></pre>
+
+          <p>
+            Si desde u no fueran alcanzables todos los nodos del grafo, elegir un nuevo vértice de partida v no
+            visitado, y repetir el proceso hasta que se hayan recorrido todos los vértices.
+          </p>
+
+          <img class="img-fluid" src="assets/img/grafos-img/graf9.png" alt="">
+
+        </div><!-- /.blog-post -->
+  
+      </div><!-- /.blog-main -->
+  
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3 mb-3 bg-light rounded">
+          <h4 class="font-italic">Resumen</h4>
+          <iframe class="img-fluid"  [src]="video | ytprovider:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div class="p-3">
+          <h4 class="font-italic">Algunos Ejercicios Populares</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="https://leetcode.com/problems/max-area-of-island/">Máxima área de islas</a></li>
+            <li><a href="https://leetcode.com/problems/island-perimeter/">Perímetro de Isla</a></li>
+            <li><a href="https://leetcode.com/problems/number-of-islands/">Número de Islas</a></li>
+            <li><a href="https://leetcode.com/problems/rotting-oranges/">Naranjas Podridas</a></li>
+            <li><a href="https://leetcode.com/problems/shortest-bridge/">Puente más Corto</a></li>
+            <li><a href="https://leetcode.com/problems/shortest-distance-from-all-buildings/">Menor distancia desde edificios</a></li>
+            <li><a href="https://leetcode.com/problems/clone-graph/">Clonar grafo</a></li>
+          </ol>
+        </div>
+
+      </aside><!-- /.blog-sidebar -->
+  
+    </div><!-- /.row -->
+  
+  </main><!-- /.container -->
