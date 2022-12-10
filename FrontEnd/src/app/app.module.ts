@@ -11,6 +11,11 @@ import { PilasApuntesComponent } from './pilas-apuntes/pilas-apuntes.component';
 import { ListasApuntesComponent } from './listas-apuntes/listas-apuntes.component';
 import { ColasApuntesComponent } from './colas-apuntes/colas-apuntes.component';
 import { YtproviderPipe } from './ytprovider.pipe';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ContactComponent } from './contact/contact.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { FooterComponent } from './footer/footer.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { YtproviderPipe } from './ytprovider.pipe';
     PilasApuntesComponent,
     ListasApuntesComponent,
     ColasApuntesComponent,
-    YtproviderPipe
+    YtproviderPipe,
+    NavbarComponent,
+    ContactComponent,
+    TeachersComponent,
+    FooterComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,

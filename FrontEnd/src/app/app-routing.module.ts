@@ -7,15 +7,17 @@ import { GrafosApuntesComponent } from './grafos-apuntes/grafos-apuntes.componen
 import { InicioComponent } from './inicio/inicio.component';
 import { ListasApuntesComponent } from './listas-apuntes/listas-apuntes.component';
 import { PilasApuntesComponent } from './pilas-apuntes/pilas-apuntes.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 const routes: Routes = [
-  {path:'',component: InicioComponent},
+  {path:'home',component: InicioComponent},
   {path:'about',component: AboutComponent},
   {path: 'arboles', component: ArbolesApuntesComponent},
   {path: 'colas', component: ColasApuntesComponent},
   {path: 'grafos', component: GrafosApuntesComponent},
   {path: 'listas', component: ListasApuntesComponent},
-  {path: 'pilas', component: PilasApuntesComponent}
+  {path: 'pilas', component: PilasApuntesComponent},
+  {path: 'teacher', component: TeachersComponent}
 ];
 
 @NgModule({
