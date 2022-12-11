@@ -16,6 +16,9 @@ import { ContactComponent } from './contact/contact.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { FooterComponent } from './footer/footer.component';
 import { CoursesComponent } from './courses/courses.component';
+import { SingnupComponent } from './singnup/singnup.component';
+import { LogingComponent } from './loging/loging.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CoursesComponent } from './courses/courses.component';
     ContactComponent,
     TeachersComponent,
     FooterComponent,
-    CoursesComponent
+    CoursesComponent,
+    SingnupComponent,
+    LogingComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

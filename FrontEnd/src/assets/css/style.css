@@ -9842,8 +9842,9 @@ h6,
 }
 
 .page-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/page-header.jpg), no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/back_code_life.jpg), no-repeat ;
+  background-size: 90em;
+  background-position: 5em;
 }
 
 .cat-item img {
