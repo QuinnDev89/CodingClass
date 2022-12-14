@@ -21,6 +21,9 @@ import { BlogComponent } from './blog/blog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EjerciciosComponent } from './ejercicios/ejercicios.component';
 import { SingleComponent } from './single/single.component';
+import { HttpClientModule} from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { SingleComponent } from './single/single.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
