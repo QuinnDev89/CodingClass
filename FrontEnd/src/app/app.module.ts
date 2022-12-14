@@ -11,6 +11,19 @@ import { PilasApuntesComponent } from './pilas-apuntes/pilas-apuntes.component';
 import { ListasApuntesComponent } from './listas-apuntes/listas-apuntes.component';
 import { ColasApuntesComponent } from './colas-apuntes/colas-apuntes.component';
 import { YtproviderPipe } from './ytprovider.pipe';
+import { NavbarComponent } from './navbar/navbar.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { FooterComponent } from './footer/footer.component';
+import { CoursesComponent } from './courses/courses.component';
+import { SingnupComponent } from './singnup/singnup.component';
+import { LogingComponent } from './loging/loging.component';
+import { BlogComponent } from './blog/blog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EjerciciosComponent } from './ejercicios/ejercicios.component';
+import { SingleComponent } from './single/single.component';
+import { HttpClientModule} from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -22,11 +35,23 @@ import { YtproviderPipe } from './ytprovider.pipe';
     PilasApuntesComponent,
     ListasApuntesComponent,
     ColasApuntesComponent,
-    YtproviderPipe
+    YtproviderPipe,
+    NavbarComponent,
+    TeachersComponent,
+    FooterComponent,
+    CoursesComponent,
+    SingnupComponent,
+    LogingComponent,
+    BlogComponent,
+    EjerciciosComponent,
+    SingleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
