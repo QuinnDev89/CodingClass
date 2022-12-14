@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingnupComponent implements OnInit {
 
-  constructor() { }
+  public nombreUsuario: string = "";
+  public correoUsuario: string = "";
+  public contrasenaUsuario: string = "";
+
+
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
+    let nombreArchivo = "usuarios.txt";
+    let contenidoArhivo = "";
+  }
+
+  public registrarUsuario():void{
+    
   }
 
 }

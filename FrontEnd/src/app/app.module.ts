@@ -12,13 +12,15 @@ import { ListasApuntesComponent } from './listas-apuntes/listas-apuntes.componen
 import { ColasApuntesComponent } from './colas-apuntes/colas-apuntes.component';
 import { YtproviderPipe } from './ytprovider.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ContactComponent } from './contact/contact.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { FooterComponent } from './footer/footer.component';
 import { CoursesComponent } from './courses/courses.component';
 import { SingnupComponent } from './singnup/singnup.component';
 import { LogingComponent } from './loging/loging.component';
 import { BlogComponent } from './blog/blog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EjerciciosComponent } from './ejercicios/ejercicios.component';
+import { SingleComponent } from './single/single.component';
 
 @NgModule({
   declarations: [
@@ -32,17 +34,20 @@ import { BlogComponent } from './blog/blog.component';
     ColasApuntesComponent,
     YtproviderPipe,
     NavbarComponent,
-    ContactComponent,
     TeachersComponent,
     FooterComponent,
     CoursesComponent,
     SingnupComponent,
     LogingComponent,
-    BlogComponent
+    BlogComponent,
+    EjerciciosComponent,
+    SingleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

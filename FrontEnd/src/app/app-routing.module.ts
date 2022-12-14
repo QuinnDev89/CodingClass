@@ -4,8 +4,8 @@ import { AboutComponent } from './about/about.component';
 import { ArbolesApuntesComponent } from './arboles-apuntes/arboles-apuntes.component';
 import { BlogComponent } from './blog/blog.component';
 import { ColasApuntesComponent } from './colas-apuntes/colas-apuntes.component';
-import { ContactComponent } from './contact/contact.component';
 import { CoursesComponent } from './courses/courses.component';
+import { EjerciciosComponent } from './ejercicios/ejercicios.component';
 import { GrafosApuntesComponent } from './grafos-apuntes/grafos-apuntes.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ListasApuntesComponent } from './listas-apuntes/listas-apuntes.component';
@@ -26,8 +26,8 @@ const routes: Routes = [
   {path: 'courses', component: CoursesComponent},
   {path: 'sign', component:SingnupComponent},
   {path: 'login', component:LogingComponent},
-  {path: 'contact', component:ContactComponent},
-  {path: 'blog', component:BlogComponent}
+  {path: 'blog', component:BlogComponent},
+  {path: 'ejercicios', component:EjerciciosComponent}
 ];
 
 @NgModule({

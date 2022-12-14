@@ -18,7 +18,7 @@ CORS(app)
 
 @app.route('/')
 def pruebaget():
-    return "Hello"
+    return "Hello" 
 
 if __name__ == '__main__':
     app.run(debug=True, port=9000, host="0.0.0.0", threaded=True)
