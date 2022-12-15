@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pilas-apuntes.component.css']
 })
 export class PilasApuntesComponent implements OnInit {
-  video='BhvLIzVL8_o';
+  video='L3ud3rXpIxA';
   constructor() { }
 
   ngOnInit(): void {
