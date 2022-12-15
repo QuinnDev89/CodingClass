@@ -13,25 +13,116 @@
 </div>
 <!-- Header End -->
 
+<div class="container-fluid py-5">
 <div class="mb-5">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            <a  class="text-decoration-none h6 m-0">Web Design</a>
+        <li class="list-group-item  align-items-center px-0">
+            <a  class="text-decoration-none h2 m-0">Hola Mundo!</a><br><br>
+            <a  class="text-decoration-none h5 m-0">Problema: Crea un programa que permita imprimir hola mundo! </a><br>
+            <a  class="text-decoration-none h5 m-0">Hint: print('') nos permite imprimir cosas que pongamos dentro de las comillas </a><br>
+            <div class="card-body rounded-bottom p-5" style="background-color:darkgrey;">
+                <form #ejercicio1Form="ngForm" (ngSubmit)="enviarEjercicios1(ejercicio1Form.value)">
+                    <div class="control-group">
+                        <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Codigo" required="required" data-validation-required-message="Please enter your message" name="codigo" ngModel></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary py-3 px-5" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <a  class="text-decoration-none h5 m-0" >Resultado: <p id="res1"></p></a><br>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            <a class="text-decoration-none h6 m-0">Web Development</a>
+        <br>
+        <li class="list-group-item align-items-center px-0">
+            <a  class="text-decoration-none h2 m-0">Asignaciones </a><br><br>
+            <a  class="text-decoration-none h5 m-0">Problema: Crea un programa que asigne dos valores a variables y los imprima</a><br>
+            <a  class="text-decoration-none h5 m-0">Hint: Para esto podemos asignar valores a las variables a=2, con ello nuestra variabla 'a' vale 2, con la coma podemos separar variables en un print </a><br>
+            <div class="card-body rounded-bottom p-5" style="background-color:darkgrey;">
+                <form #ejercicio2Form="ngForm" (ngSubmit)="enviarEjercicios2(ejercicio2Form.value)">
+                    <div class="control-group">
+                        <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Codigo" required="required" data-validation-required-message="Please enter your message" name="codigo" ngModel></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary py-3 px-5" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <a  class="text-decoration-none h5 m-0">Resultado:  <p id="res2"></p></a><br>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            <a  class="text-decoration-none h6 m-0">Online Marketing</a>
+        <br>
+        <li class="list-group-item align-items-center px-0">
+            <a  class="text-decoration-none h2 m-0">Sumas</a><br><br>
+            <a  class="text-decoration-none h5 m-0">Problema: Crea un programa que sume dos numeros </a><br>
+            <a  class="text-decoration-none h5 m-0">Hint: Podemos hacer a+b para obtener la suma de dos variables, esto se puede hacer dentro del print </a><br>
+            <div class="card-body rounded-bottom p-5" style="background-color:darkgrey;">
+                <form #ejercicio3Form="ngForm" (ngSubmit)="enviarEjercicios3(ejercicio3Form.value)">
+                    <div class="control-group">
+                        <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Codigo" required="required" data-validation-required-message="Please enter your message" name="codigo" ngModel></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary py-3 px-5" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <a  class="text-decoration-none h5 m-0">Resultado:  <p id="res3"></p></a><br>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            <a class="text-decoration-none h6 m-0">Keyword Research</a>
+        <br>
+        <li class="list-group-item align-items-center px-0">
+            <a  class="text-decoration-none h2 m-0">Multiplicaciones</a><br><br>
+            <a  class="text-decoration-none h5 m-0">Problema: Crear un programa que sume dos numeros y el resultado lo multiplique por dos </a><br>
+            <a  class="text-decoration-none h5 m-0">Hint:Para generar una multiplicacion usamos el operador *, con esto podemos obtener una multiplicacion a*b </a><br>
+            <div class="card-body rounded-bottom p-5" style="background-color:darkgrey;">
+                <form #ejercicio4Form="ngForm" (ngSubmit)="enviarEjercicios4(ejercicio4Form.value)">
+                    <div class="control-group">
+                        <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Codigo" required="required" data-validation-required-message="Please enter your message" name="codigo" ngModel></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary py-3 px-5" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <a  class="text-decoration-none h5 m-0">Resultado: <p id="res4"></p> </a><br>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            <a  class="text-decoration-none h6 m-0">Email Marketing</a>
+        <br>
+        <li class="list-group-item align-items-center px-0">
+            <a  class="text-decoration-none h2 m-0">Condicion sencilla</a><br><br>
+            <a  class="text-decoration-none h5 m-0">Problema: Crea un programa que permita imprimir hola mundo! </a><br>
+            <a  class="text-decoration-none h5 m-0">Hint: print('') nos permite imprimir cosas que pongamos dentro de las comillas </a><br>
+            <div class="card-body rounded-bottom p-5" style="background-color:darkgrey;">
+                <form #ejercicio5Form="ngForm" (ngSubmit)="enviarEjercicios5(ejercicio5Form.value)">
+                    <div class="control-group">
+                        <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Codigo" required="required" data-validation-required-message="Please enter your message" name="codigo" ngModel></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary py-3 px-5" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <a  class="text-decoration-none h5 m-0">Resultado:  <p id="res5"></p></a><br>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            <a  class="text-decoration-none h6 m-0">Email Marketing</a>
+        <br>
+        <li class="list-group-item  align-items-center px-0">
+            <a  class="text-decoration-none h2 m-0">Condicion completa</a><br><br>
+            <a  class="text-decoration-none h5 m-0">Problema: Crea un programa que evalue si dos numeroS son iguales y los multiplique, de lo contrario que los reste </a><br>
+            <a  class="text-decoration-none h5 m-0">Hint: Asigna los valores, genera tu if como el ejercicio anterior, despues tendras que agregar un else, este permite hacer algo en caso de que no se cumpla la condicon</a><br>
+            <div class="card-body rounded-bottom p-5" style="background-color:darkgrey;">
+                <form #ejercicio6Form="ngForm" (ngSubmit)="enviarEjercicios6(ejercicio6Form.value)">
+                    <div class="control-group">
+                        <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Codigo" required="required" data-validation-required-message="Please enter your message" name="codigo" ngModel></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary py-3 px-5" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <a  class="text-decoration-none h5 m-0">Resultado: <p id="res6"></p> </a><br>
         </li>
     </ul>
+</div>
 </div>

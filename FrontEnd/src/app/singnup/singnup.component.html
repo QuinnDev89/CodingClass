@@ -20,15 +20,15 @@
                         <h1 class="m-0">Ingresa ahora</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-primary p-5">
-                        <form>
+                        <form #signupForm="ngForm" (ngSubmit)="onSignUp(signupForm.value)">
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Nombre" required="required" [(ngModel)]="nombreUsuario"/>
+                                <input type="text" class="form-control border-0 p-4" placeholder="Nombre" required="required" name="userName" ngModel/>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Correo" required="required" [(ngModel)]="correoUsuario"/>
+                                <input type="email" class="form-control border-0 p-4" placeholder="Correo" required="required" name="userEmail" ngModel/>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control border-0 p-4" placeholder="Contraseña" required="required" [(ngModel)]="contrasenaUsuario" />
+                                <input type="password" class="form-control border-0 p-4" placeholder="Contraseña" required="required" name="userPass" ngModel/>
                             </div>
                             <div>
                                 <button class="btn btn-dark btn-block border-0 py-3" type="submit">Registrar</button>

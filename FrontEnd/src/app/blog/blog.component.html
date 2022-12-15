@@ -19,13 +19,14 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8">
-                <div class="row pb-3">
-                    <div class="col-lg-6 mb-4">
+                <div class="row pb-3" >
+                    <div class="col-lg-6 mb-4" *ngFor="let blog of resultados">
                         <div class="blog-item position-relative overflow-hidden rounded mb-2">
                             <img class="img-fluid" src="assets/img/fondo_blog.jpg" alt="">
-                            <a class="blog-overlay text-decoration-none" href="">
-                                <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                <p class="text-primary m-0">Jan 01, 2050</p>
+                            <a class="blog-overlay text-decoration-none" >
+                                <h5 class="text-white mb-3">{{blog.tema}}</h5>
+                                <p class="text-primary m-0">{{blog.autor}}}</p>
+                                <p class="text-primary m-0">{{blog.mensaje}}}</p>
                             </a>
                         </div>
                     </div>
@@ -47,21 +48,21 @@
             <div class="col-lg-8">
                 <div class="contact-form bg-secondary rounded p-5">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <form  #blogUpForm="ngForm" (ngSubmit)="onBlogUp(blogUpForm.value)">
                         <div class="control-group">
-                            <input type="text" class="form-control border-0 p-4" id="name" placeholder="Tema" required="required" data-validation-required-message="Please enter your name" />
+                            <input type="text" class="form-control border-0 p-4"  placeholder="Tema" required="required" data-validation-required-message="Please enter your name" name="tema" ngModel />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control border-0 p-4" id="email" placeholder="Nombre" required="required" data-validation-required-message="Please enter your email" />
+                            <input type="email" class="form-control border-0 p-4"  placeholder="Autor" required="required" data-validation-required-message="Please enter your email" name="autor" ngModel />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Mensaje de Blog" required="required" data-validation-required-message="Please enter your message"></textarea>
+                            <textarea class="form-control border-0 py-3 px-4" rows="5"  placeholder="Mensaje de Blog" required="required" data-validation-required-message="Please enter your message" name="mensaje" ngModel></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                            <button class="btn btn-primary py-3 px-5" type="submit" >Publicar</button>
                         </div>
                     </form>
                 </div>

@@ -1,0 +1,40 @@
+[
+    {
+        "tema": "Hola Mundo!",
+        "problema": "Crea un programa que permita imprimir hola mundo!",
+        "hint": "print('') nos permite imprimir cosas que pongamos dentro de las comillas",
+        "codigo": "print('Hola Mundo!')"
+    },
+    {
+        
+        "tema": "Asignaciones",
+        "problema": "Crea un programa que asigne dos valores a variables y los imprima",
+        "hint": "Para esto podemos asignar valores a las variables a=2, con ello nuestra variabla 'a' vale 2, con la coma podemos separar variables en un print ",
+        "codigo": "a=3 b=5 print(a,b)"
+    },
+    {
+        "tema": "Sumas",
+        "problema": "Crea un programa que sume dos numeros",
+        "hint": "Podemos hacer a+b para obtener la suma de dos variables, esto se puede hacer dentro del print",
+        "codigo": "a=1 b=2 print(a+b)"
+    },
+    {
+        "tema": "Multiplicaciones",
+        "problema": "Crear un programa que sume dos numeros y el resultado lo multiplique por dos",
+        "hint": "Para generar una multiplicacion usamos el operador *, con esto podemos obtener una multiplicacion a*b",
+        "codigo": "a=1 b=2 print((a+b)*2)"
+    },
+    {
+        "tema": "Condicion sencilla",
+        "problema": "Crea un programa que evalue si dos numeros son iguales y los multiplique",
+        "hint": "Asigna tus valores en el codigo y usa un if variablea==variableb, si se cumple esta condicion, podemos hacer una accion despues del if",
+        "codigo": "a=10 b= 10 if a==b: print(a*b)"
+
+    },{
+        "tema": "Condicion completa",
+        "problema": "Crea un programa que evalue si dos numeroS son iguales y los multiplique, de lo contrario que los reste",
+        "hint": "Asigna los valores, genera tu if como el ejercicio anterior, despues tendras que agregar un else, este permite hacer algo en caso de que no se cumpla la condicon",
+        "codigo": "a=2 b= 3 if a==b: print(a*b) else: print(a-b)"
+
+    }
+]

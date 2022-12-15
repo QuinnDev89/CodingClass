@@ -1,3 +1,4 @@
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,22 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingnupComponent implements OnInit {
 
-  public nombreUsuario: string = "";
-  public correoUsuario: string = "";
-  public contrasenaUsuario: string = "";
 
 
-  constructor() { 
+  constructor(private http: HttpClient) { 
     
   }
 
   ngOnInit(): void {
-    let nombreArchivo = "usuarios.txt";
-    let contenidoArhivo = "";
+
   }
 
-  public registrarUsuario():void{
-    
+  public onSignUp(usuario: {userName: string,userEmail: string,userPass:string}):void{
+      console.log(usuario);
+      this.http.post('http://192.168.1.3:3000/addUser',usuario)
+      .subscribe((res) => {
+        console.log(res);
+      })
   }
 
 }
